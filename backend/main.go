@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gorilla/mux"
 	"net/http"
 	"time"
@@ -20,7 +19,11 @@ func main() {
 		ReadTimeout:  15 * time.Second,
 	}
 
-	setAuthorizationHandlers()
+	files := http.FileServer(http.Dir("static"))
+	Router.Handle("/static/", http.StripPrefix("/static/", files))
 
-	fmt.Println(Server.ListenAndServeTLS(tlsCertFile, tlsKeyFile))
+	setAuthorizationHandlers()
+	setMainHandlers()
+
+	Server.ListenAndServeTLS(tlsCertFile, tlsKeyFile)
 }

@@ -6,5 +6,5 @@ import (
 )
 
 func RegistrationHandler(writer http.ResponseWriter, request *http.Request) {
-	fmt.Fprint(writer, "HelloWorld")
+	fmt.Fprint(writer, "Hello World")
 }
