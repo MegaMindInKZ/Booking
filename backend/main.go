@@ -20,10 +20,9 @@ func main() {
 	}
 
 	files := http.FileServer(http.Dir("static"))
-	Router.Handle("/static/", http.StripPrefix("/static/", files))
-
+	Router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", files))
 	setAuthorizationHandlers()
 	setMainHandlers()
 
-	Server.ListenAndServeTLS(tlsCertFile, tlsKeyFile)
+	Server.ListenAndServe()
 }

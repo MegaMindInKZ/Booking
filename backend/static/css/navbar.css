@@ -1,0 +1,43 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 100px
+}
+
+.header-left-container{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+header a{
+    text-decoration: none;
+    color: black;
+    margin: 0px 15px
+}
+
+.header-center-container{
+    margin: 0px 10px;
+}
+
+.second-container{
+    width: 100%;
+    background-color: #344213;
+}
+
+.second-container .main-container{
+    width: 1140px;
+    position: relative;
+    margin: 0px auto;
+}
+
+.second-container .photos-container{
+    position: relative;
+    padding: 55px 0px 35px 0px;
+    display: flex;
+}
+
+.second-container .photos-container img{
+    width: 350px;
+    margin: 5px;
+}
