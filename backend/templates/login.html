@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{{ define "base" }}
+    <html lang="en">                
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="/static/css/login.css">
+    </head>
+    <body>
+        <div class="general-container">
+            <div class="main-container">
+                <div class="form-container">
+                    <form action="POST">
+                            <div class="main-title-container">
+                                Sign In
+                            </div>
+                            <div class="inputs-main-container flex-vertical-container">
+                                <div class="flex-vertical-container" >
+                                    <div class="inputs-container flex-vertical-container">
+                                        <div class="input-container">
+                                            <input type="text" name="username-or-email" placeholder="Username or Email">
+                                        </div>
+                                        <div class="input-container">
+                                            <input type="text" name="password" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="forgot-container">
+                                        Forgot <a href=""> Username/Password? </a>
+                                    </div>
+                                    <button type="submit">SIGN IN</button>
+                                </div>
+                                <div class="last-container">
+                                    <div>
+                                        Don't have an account
+                                    </div>
+                                    <a>
+                                        SIGN UP NOW
+                                    </a>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>                                         
+    </html>                                                             
+{{ end }}
