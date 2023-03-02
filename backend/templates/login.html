@@ -10,7 +10,7 @@
         <div class="general-container">
             <div class="main-container">
                 <div class="form-container">
-                    <form action="POST">
+                    <form action="/api/registration" name="loginForm" id="login-form">
                             <div class="main-title-container">
                                 Sign In
                             </div>
@@ -18,10 +18,10 @@
                                 <div class="flex-vertical-container" >
                                     <div class="inputs-container flex-vertical-container">
                                         <div class="input-container">
-                                            <input type="text" name="username-or-email" placeholder="Username or Email">
+                                            <input type="text" name="username-or-email" placeholder="Username or Email" required>
                                         </div>
                                         <div class="input-container">
-                                            <input type="text" name="password" placeholder="Password">
+                                            <input type="password" name="password" placeholder="Password" required>
                                         </div>
                                     </div>
                                     <div class="forgot-container">

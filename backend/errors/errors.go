@@ -2,4 +2,4 @@ package errors
 
 import "errors"
 
-var TemplateExecuteError = errors.New("Cannot execute template")
+var TemplateExecuteError = errors.New("CANNOT EXECUTE TEMPLATE")

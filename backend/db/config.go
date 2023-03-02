@@ -2,6 +2,7 @@ package db
 
 import (
 	"database/sql"
+	"flag"
 	"fmt"
 	_ "github.com/lib/pq"
 	"io/ioutil"
@@ -10,17 +11,23 @@ import (
 
 var DB *sql.DB
 
-const (
+var (
 	dbUsername = "postgres"
 	dbPassword = "200103287sdu"
 	dbName     = "booking"
 	dbHost     = "127.0.0.1"
 	dbPort     = 5432
+	DBRestart  = false
 )
 
 func init() {
+	flag.BoolVar(&DBRestart, "dbRestart", false, "Do you need restart database?")
+	flag.StringVar(&dbUsername, "dbUsername", "postgres", "Database username")
+	flag.StringVar(&dbPassword, "dbPassword", "200103287sdu", "Database password")
+	flag.StringVar(&dbName, "dbName", "booking", "Database name")
+	flag.StringVar(&dbHost, "dbHost", "127.0.0.1", "Database host")
+	flag.IntVar(&dbPort, "dbPort", 5432, "Database port")
 	initDB()
-	configDB()
 }
 
 func initDB() {
@@ -35,7 +42,7 @@ func initDB() {
 	}
 }
 
-func configDB() {
+func ConfigDB() {
 	tables()
 }
 

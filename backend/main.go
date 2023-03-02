@@ -1,6 +1,8 @@
 package main
 
 import (
+	"booking/backend/db"
+	"flag"
 	"github.com/gorilla/mux"
 	"net/http"
 	"time"
@@ -12,6 +14,11 @@ var Router = mux.NewRouter().StrictSlash(true)
 var Server = &http.Server{}
 
 func main() {
+	flag.Parse()
+	if db.DBRestart {
+		db.ConfigDB()
+	}
+
 	Server = &http.Server{
 		Handler:      Router,
 		Addr:         "127.0.0.1:8000",
