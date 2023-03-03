@@ -8,13 +8,14 @@ import (
 )
 
 func RegistrationHandler(writer http.ResponseWriter, request *http.Request) {
-	fmt.Println(request.Body)
+	request.ParseForm()
 	writer.WriteHeader(http.StatusOK)
 	input := struct {
 		UsernameOrEmail string `json:"username-or-email"`
 		Password        string `json:"password"`
 	}{}
 	fmt.Println(json.NewDecoder(request.Body).Decode(&input))
+	fmt.Println(input.UsernameOrEmail)
 	fmt.Println(request.Method)
 }
 
